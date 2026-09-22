@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { MOCK_DESTINATIONS } from '@/data/mockData';
+import Icon from '@/components/ui/Icon';
 
 export default function DestinationsPage() {
   const [selectedForCompare, setSelectedForCompare] = useState<string[]>(['sapa', 'dalat']);
@@ -51,7 +52,7 @@ export default function DestinationsPage() {
           onClick={() => setShowComparisonModal(true)}
           className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#efeeeb] hover:bg-[#eae8e5] text-[#0b3b3c] font-label-lg text-xs sm:text-sm font-semibold transition-colors border border-[#c0c8c8]/60"
         >
-          <span className="material-symbols-outlined text-[18px]">compare_arrows</span>
+          <Icon name="compare_arrows" className="size-[18px]" />
           <span>Bảng so sánh chi tiết ({selectedForCompare.length})</span>
         </button>
       </div>
@@ -122,9 +123,7 @@ export default function DestinationsPage() {
                       Di chuyển
                     </span>
                     <span className="font-label-lg text-xs sm:text-sm text-[#1e293b] font-medium flex items-center gap-1.5 mt-0.5">
-                      <span className="material-symbols-outlined text-[16px] text-[#b45309]">
-                        {dest.transport.icon}
-                      </span>
+                      <Icon name={dest.transport.icon} className="size-4 text-[#b45309]" />
                       <span>{dest.transport.level} ({dest.transport.description})</span>
                     </span>
                   </div>
@@ -133,7 +132,7 @@ export default function DestinationsPage() {
                       Thời điểm vàng
                     </span>
                     <span className="font-label-lg text-xs sm:text-sm text-[#1e293b] font-medium flex items-center gap-1.5 mt-0.5">
-                      <span className="material-symbols-outlined text-[16px] text-[#3b6566]">calendar_month</span>
+                      <Icon name="calendar_month" className="size-4 text-[#3b6566]" />
                       <span>{dest.goldenHour}</span>
                     </span>
                   </div>
@@ -142,7 +141,7 @@ export default function DestinationsPage() {
                       Bầu không khí
                     </span>
                     <span className="font-label-lg text-xs sm:text-sm text-[#1e293b] font-medium flex items-center gap-1.5 mt-0.5">
-                      <span className="material-symbols-outlined text-[16px] text-[#3b6566]">{dest.vibe.icon}</span>
+                      <Icon name={dest.vibe.icon} className="size-4 text-[#3b6566]" />
                       <span>{dest.vibe.title}</span>
                     </span>
                   </div>
@@ -175,9 +174,7 @@ export default function DestinationsPage() {
                       className="px-4 py-2 rounded-lg bg-[#efeeeb] hover:bg-[#eae8e5] text-[#0b3b3c] font-label-lg text-xs font-semibold transition-colors flex items-center gap-1.5"
                     >
                       <span>{isExpanded ? 'Thu gọn hồ sơ' : 'Xem hồ sơ tình báo'}</span>
-                      <span className={`material-symbols-outlined text-[18px] transition-transform ${isExpanded ? 'rotate-180' : ''}`}>
-                        keyboard_arrow_down
-                      </span>
+                      <Icon name="keyboard_arrow_down" className={`size-[18px] transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                     </button>
 
                     <Link
@@ -185,7 +182,7 @@ export default function DestinationsPage() {
                       className="inline-flex items-center gap-1.5 px-5 py-2 rounded-lg bg-[#0b3b3c] hover:bg-[#124e50] text-white font-label-lg text-xs font-semibold transition-all active:scale-[0.98] shadow-xs"
                     >
                       <span>Lên kế hoạch ở đây</span>
-                      <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                      <Icon name="arrow_forward" className="size-4" />
                     </Link>
                   </div>
                 </div>
@@ -195,7 +192,7 @@ export default function DestinationsPage() {
               {isExpanded && (
                 <div className="px-6 pb-6 pt-2 bg-[#f5f3f0]/50 border-t border-[#eae8e5] space-y-6 animate-in fade-in duration-300">
                   <div className="flex items-center gap-2 text-xs font-label-caps text-[#b45309] font-bold uppercase tracking-wider">
-                    <span className="material-symbols-outlined text-[16px]">verified_user</span>
+                    <Icon name="verified_user" className="size-4" />
                     <span>HỒ SƠ TÌNH BÁO DU LỊCH (INTELLIGENCE DOSSIER)</span>
                   </div>
 
@@ -204,7 +201,7 @@ export default function DestinationsPage() {
                     <div className="bg-white p-5 rounded-xl border border-[#eae8e5] space-y-4">
                       <div className="flex items-center justify-between">
                         <h4 className="font-headline-sm text-sm text-[#0b3b3c] font-semibold flex items-center gap-2">
-                          <span className="material-symbols-outlined text-[#3b6566] text-[18px]">wb_twilight</span>
+                          <Icon name="wb_twilight" className="size-[18px] text-[#3b6566]" />
                           <span>Thời điểm lý tưởng nhất (Best Moment)</span>
                         </h4>
                         <span className="text-xs text-[#2e7d32] font-semibold bg-[#2e7d32]/10 px-2 py-0.5 rounded">
@@ -263,7 +260,7 @@ export default function DestinationsPage() {
                     <div className="bg-white p-5 rounded-xl border border-[#eae8e5] space-y-4">
                       <div className="flex items-center justify-between">
                         <h4 className="font-headline-sm text-sm text-[#0b3b3c] font-semibold flex items-center gap-2">
-                          <span className="material-symbols-outlined text-[#b45309] text-[18px]">verified</span>
+                          <Icon name="verified" className="size-[18px] text-[#b45309]" />
                           <span>Kiểm chứng thực tế (Kỳ vọng vs Thực tế)</span>
                         </h4>
                         <span className="text-xs font-semibold text-[#b45309] bg-[#ffddb8] px-2 py-0.5 rounded">
@@ -358,7 +355,7 @@ export default function DestinationsPage() {
               onClick={() => setShowComparisonModal(true)}
               className="inline-flex items-center gap-2 px-5 py-2 bg-[#d49b53] hover:bg-[#c88d42] text-white text-xs sm:text-sm font-label-lg font-semibold rounded-lg shadow-sm transition-all"
             >
-              <span className="material-symbols-outlined text-[18px]">balance</span>
+              <Icon name="balance" className="size-[18px]" />
               <span>So sánh chi tiết ngay ({selectedForCompare.length})</span>
             </button>
           </div>
@@ -384,7 +381,7 @@ export default function DestinationsPage() {
                 className="w-8 h-8 rounded-full bg-white hover:bg-[#eae8e5] flex items-center justify-center text-[#404848] transition-colors border border-[#eae8e5]"
                 aria-label="Đóng bảng so sánh"
               >
-                <span className="material-symbols-outlined text-[20px]">close</span>
+                <Icon name="close" className="size-5" />
               </button>
             </div>
 
@@ -454,7 +451,7 @@ export default function DestinationsPage() {
                       className="inline-flex items-center justify-center gap-1 w-full py-2 px-3 bg-[#0b3b3c] hover:bg-[#124e50] text-white text-xs font-label-lg font-semibold rounded-lg shadow-xs transition-colors"
                     >
                       <span>Chọn {d.name.split(',')[0]}</span>
-                      <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                      <Icon name="arrow_forward" className="size-[14px]" />
                     </Link>
                   </div>
                 ))}

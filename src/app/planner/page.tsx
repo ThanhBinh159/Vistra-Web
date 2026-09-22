@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { MOCK_PLANNER_DAYS, DayItinerary, Activity } from '@/data/mockData';
 import Toast from '@/components/shared/Toast';
+import Icon from '@/components/ui/Icon';
 
 export default function PlannerPage() {
   const [selectedDayNumber, setSelectedDayNumber] = useState<number>(2);
@@ -33,7 +34,7 @@ export default function PlannerPage() {
               className="p-1.5 rounded-lg text-[#404848] hover:text-[#0b3b3c] hover:bg-[#f5f3f0] transition-colors"
               title="Quay lại chọn điểm đến"
             >
-              <span className="material-symbols-outlined text-[20px]">arrow_back</span>
+              <Icon name="arrow_back" className="size-5" />
             </Link>
             <div>
               <div className="flex items-center gap-2">
@@ -54,7 +55,7 @@ export default function PlannerPage() {
               onClick={() => setShowAiModal(true)}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#efeeeb] hover:bg-[#eae8e5] text-[#0b3b3c] font-label-lg text-xs font-semibold transition-colors border border-[#c0c8c8]/60"
             >
-              <span className="material-symbols-outlined text-[16px] text-[#b45309]">auto_fix_high</span>
+              <Icon name="auto_fix_high" className="size-4 text-[#b45309]" />
               <span>Đề xuất tối ưu ({appliedAiOptimization ? 'Đã áp dụng' : '1 đề xuất'})</span>
             </button>
 
@@ -63,7 +64,7 @@ export default function PlannerPage() {
               className="inline-flex items-center gap-2 px-5 py-2 bg-[#0b3b3c] hover:bg-[#124e50] text-white font-label-lg text-xs sm:text-sm font-semibold rounded-lg shadow-sm transition-all active:scale-[0.98]"
             >
               <span>Hoàn tất kế hoạch</span>
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+              <Icon name="arrow_forward" className="size-4" />
             </Link>
           </div>
         </div>
@@ -127,7 +128,7 @@ export default function PlannerPage() {
 
             {/* Quick Weather Tile */}
             <div className="mt-4 p-3 bg-white border border-[#eae8e5] rounded-xl flex items-center gap-3 shadow-2xs">
-              <span className="material-symbols-outlined text-[#b45309] text-2xl">cloud_queue</span>
+              <Icon name="cloud_queue" className="size-6 text-[#b45309]" />
               <div className="text-xs">
                 <div className="font-bold text-[#0b3b3c]">{currentDay.weather.split('·')[0]}</div>
                 <div className="text-[11px] text-[#404848] leading-tight">
@@ -166,7 +167,7 @@ export default function PlannerPage() {
                   className="p-2 rounded-lg bg-[#f5f3f0] hover:bg-[#eae8e5] text-[#0b3b3c] transition-colors"
                   title="Tự động kiểm tra xung đột"
                 >
-                  <span className="material-symbols-outlined text-[18px]">auto_fix_high</span>
+                  <Icon name="auto_fix_high" className="size-[18px]" />
                 </button>
               </div>
             </div>
@@ -182,9 +183,7 @@ export default function PlannerPage() {
                       className="ml-6 sm:ml-24 py-2 px-4 bg-[#f5f3f0] rounded-xl border border-dashed border-[#c0c8c8] flex items-center justify-between text-xs text-[#404848]"
                     >
                       <div className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[18px] text-[#b45309]">
-                          {item.transit.type.includes('bộ') ? 'directions_walk' : 'directions_car'}
-                        </span>
+                        <Icon name={item.transit.type.includes('bộ') ? 'directions_walk' : 'directions_car'} className="size-[18px] text-[#b45309]" />
                         <span className="font-medium text-[#0b3b3c]">
                           {item.transit.type}: {item.transit.duration} ({item.transit.distance})
                         </span>
@@ -234,12 +233,10 @@ export default function PlannerPage() {
 
                         <div className="flex items-center gap-1 text-[#404848]">
                           {act.isLocked && (
-                            <span className="material-symbols-outlined text-[16px] text-[#b45309]" title="Hoạt động chốt cứng theo giờ vàng">
-                              lock
-                            </span>
+                            <Icon name="lock" className="size-4 text-[#b45309]" title="Hoạt động chốt cứng theo giờ vàng" />
                           )}
                           <button className="p-1 hover:text-[#0b3b3c] transition-colors" title="Kéo thả hoặc thay đổi thứ tự">
-                            <span className="material-symbols-outlined text-[18px]">drag_indicator</span>
+                            <Icon name="drag_indicator" className="size-[18px]" />
                           </button>
                         </div>
                       </div>
@@ -253,7 +250,7 @@ export default function PlannerPage() {
 
                       <div className="mt-3 pt-3 border-t border-[#f5f3f0] flex flex-wrap items-center justify-between gap-2 text-xs">
                         <span className="text-[#3b6566] flex items-center gap-1 font-medium text-[11px]">
-                          <span className="material-symbols-outlined text-[14px]">location_on</span>
+                          <Icon name="location_on" className="size-[14px]" />
                           <span>{act.location}</span>
                         </span>
                         <div className="flex items-center gap-1.5">
@@ -275,7 +272,7 @@ export default function PlannerPage() {
               onClick={() => setToastMessage('Đã mở gợi ý trạm dừng tương thích trên cung đường này!')}
               className="py-3 px-4 rounded-xl border-2 border-dashed border-[#c0c8c8] hover:border-[#0b3b3c] text-xs font-label-lg font-semibold text-[#0b3b3c] bg-white hover:bg-[#f5f3f0] transition-colors flex items-center justify-center gap-2"
             >
-              <span className="material-symbols-outlined text-[18px]">add_location_alt</span>
+              <Icon name="add_location_alt" className="size-[18px]" />
               <span>+ Thêm trạm dừng vào Ngày {currentDay.dayNumber}</span>
             </button>
           </main>
@@ -288,7 +285,7 @@ export default function PlannerPage() {
             <div className="bg-white rounded-2xl border border-[#eae8e5] p-4 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <span className="font-label-caps text-xs text-[#0b3b3c] uppercase font-bold flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-[#3b6566]">map</span>
+                  <Icon name="map" className="size-4 text-[#3b6566]" />
                   <span>BẢN ĐỒ TUYẾN ĐƯỜNG</span>
                 </span>
                 <span className="text-[11px] text-[#b45309] font-semibold">18.5 km</span>
@@ -338,7 +335,7 @@ export default function PlannerPage() {
             <div className="bg-white rounded-2xl border border-[#eae8e5] p-4 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <span className="font-label-caps text-xs text-[#0b3b3c] uppercase font-bold flex items-center gap-1.5">
-                  <span className="material-symbols-outlined text-[16px] text-[#b45309]">payments</span>
+                  <Icon name="payments" className="size-4 text-[#b45309]" />
                   <span>BUDGET GUARDIAN</span>
                 </span>
                 <span className="text-[11px] font-semibold text-[#2e7d32] bg-[#2e7d32]/10 px-2 py-0.5 rounded">
@@ -378,7 +375,7 @@ export default function PlannerPage() {
             {/* AI Change Preview Callout */}
             <div className="bg-[#f5f3f0] rounded-2xl border border-[#eae8e5] p-4 space-y-3">
               <div className="flex items-center gap-2 text-[#b45309]">
-                <span className="material-symbols-outlined text-[18px]">psychology</span>
+                <Icon name="psychology" className="size-[18px]" />
                 <span className="font-label-caps text-xs font-bold uppercase">
                   TRỢ LÝ AI ĐỀ XUẤT
                 </span>
@@ -395,7 +392,7 @@ export default function PlannerPage() {
                   className="w-full py-2 px-3 bg-[#0b3b3c] hover:bg-[#124e50] text-white text-xs font-label-lg font-semibold rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-2xs"
                 >
                   <span>Xem trước tác động</span>
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="size-[14px]" />
                 </button>
               )}
             </div>
@@ -420,7 +417,7 @@ export default function PlannerPage() {
                 onClick={() => setShowAiModal(false)}
                 className="w-8 h-8 rounded-full bg-[#f5f3f0] hover:bg-[#eae8e5] flex items-center justify-center text-[#404848]"
               >
-                <span className="material-symbols-outlined text-[18px]">close</span>
+                <Icon name="close" className="size-[18px]" />
               </button>
             </div>
 

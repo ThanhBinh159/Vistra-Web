@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { MOCK_PLANNER_DAYS, MOCK_COST_BREAKDOWN, Activity } from '@/data/mockData';
 import Toast from '@/components/shared/Toast';
+import Icon from '@/components/ui/Icon';
 
 export default function TripPlanPage() {
   const [expandedDays, setExpandedDays] = useState<number[]>([1, 2]);
@@ -46,7 +47,7 @@ export default function TripPlanPage() {
             href="/planner"
             className="inline-flex items-center gap-2 text-xs font-label-lg font-semibold text-[#0b3b3c] hover:text-[#b45309] transition-colors"
           >
-            <span className="material-symbols-outlined text-[18px]">edit_calendar</span>
+            <Icon name="edit_calendar" className="size-[18px]" />
             <span>&larr; Quay lại chỉnh sửa tại Workspace</span>
           </Link>
 
@@ -55,7 +56,7 @@ export default function TripPlanPage() {
               onClick={handlePrint}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#f5f3f0] hover:bg-[#eae8e5] text-[#0b3b3c] font-label-lg text-xs font-semibold transition-colors border border-[#eae8e5]"
             >
-              <span className="material-symbols-outlined text-[16px]">print</span>
+              <Icon name="print" className="size-4" />
               <span>In lịch trình</span>
             </button>
 
@@ -63,7 +64,7 @@ export default function TripPlanPage() {
               onClick={handleShare}
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#f5f3f0] hover:bg-[#eae8e5] text-[#0b3b3c] font-label-lg text-xs font-semibold transition-colors border border-[#eae8e5]"
             >
-              <span className="material-symbols-outlined text-[16px]">share</span>
+              <Icon name="share" className="size-4" />
               <span>Chia sẻ</span>
             </button>
 
@@ -71,7 +72,7 @@ export default function TripPlanPage() {
               onClick={handleExportPdf}
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0b3b3c] hover:bg-[#124e50] text-white font-label-lg text-xs font-semibold transition-colors shadow-2xs"
             >
-              <span className="material-symbols-outlined text-[16px]">download</span>
+              <Icon name="download" className="size-4" />
               <span>Xuất PDF</span>
             </button>
           </div>
@@ -100,19 +101,19 @@ export default function TripPlanPage() {
 
             <div className="pt-2 flex flex-wrap items-center gap-4 sm:gap-6 text-xs font-label-md text-[#404848] border-t border-[#f5f3f0]">
               <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#3b6566]">calendar_today</span>
+                <Icon name="calendar_today" className="size-4 text-[#3b6566]" />
                 <span>18–21 Th11 (Cuối thu)</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#3b6566]">group</span>
+                <Icon name="group" className="size-4 text-[#3b6566]" />
                 <span>2 Người lớn</span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#b45309]">payments</span>
+                <Icon name="payments" className="size-4 text-[#b45309]" />
                 <span>Tổng chi phí: <strong>14.250.000 VND</strong></span>
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px] text-[#2e7d32]">verified</span>
+                <Icon name="verified" className="size-4 text-[#2e7d32]" />
                 <span>Khả năng xuất hiện sương mù: <strong>96%</strong></span>
               </span>
             </div>
@@ -180,13 +181,7 @@ export default function TripPlanPage() {
                       <span className="hidden sm:inline text-xs text-[#404848]">
                         {day.highlight}
                       </span>
-                      <span
-                        className={`material-symbols-outlined text-[#404848] transition-transform duration-300 ${
-                          isExpanded ? 'rotate-180' : ''
-                        }`}
-                      >
-                        expand_more
-                      </span>
+                      <Icon name="expand_more" className={`size-5 text-[#404848] transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
                     </div>
                   </div>
 
@@ -200,9 +195,7 @@ export default function TripPlanPage() {
                               key={`t-${idx}`}
                               className="ml-6 py-2 px-4 bg-[#f5f3f0] rounded-lg border-l-2 border-[#d49b53] text-xs text-[#404848] flex items-center gap-2"
                             >
-                              <span className="material-symbols-outlined text-[16px] text-[#b45309]">
-                                swap_driving_apps
-                              </span>
+                              <Icon name="swap_driving_apps" className="size-4 text-[#b45309]" />
                               <span>
                                 <strong>{item.transit.type} ({item.transit.duration}):</strong> {item.transit.description}
                               </span>
@@ -227,7 +220,7 @@ export default function TripPlanPage() {
                                   {act.timeStart} – {act.timeEnd} · {act.category}
                                 </span>
                                 <span className="text-xs text-[#3b6566] font-medium flex items-center gap-1">
-                                  <span className="material-symbols-outlined text-[14px]">location_on</span>
+                                  <Icon name="location_on" className="size-[14px]" />
                                   <span>{act.location}</span>
                                 </span>
                               </div>
@@ -276,7 +269,7 @@ export default function TripPlanPage() {
             {/* Module 1: Dedicated Driver & Transport */}
             <div className="bg-white rounded-2xl border border-[#eae8e5] p-5 shadow-xs space-y-3">
               <div className="flex items-center gap-2 text-[#0b3b3c]">
-                <span className="material-symbols-outlined text-[20px] text-[#b45309]">directions_car</span>
+                <Icon name="directions_car" className="size-5 text-[#b45309]" />
                 <h3 className="font-label-caps text-xs uppercase font-bold">
                   PHƯƠNG TIỆN &amp; TÀI XẾ CHUYÊN TRÁCH
                 </h3>
@@ -304,7 +297,7 @@ export default function TripPlanPage() {
             {/* Module 2: Weather & Outfit Guide */}
             <div className="bg-white rounded-2xl border border-[#eae8e5] p-5 shadow-xs space-y-3">
               <div className="flex items-center gap-2 text-[#0b3b3c]">
-                <span className="material-symbols-outlined text-[20px] text-[#3b6566]">thermostat</span>
+                <Icon name="thermostat" className="size-5 text-[#3b6566]" />
                 <h3 className="font-label-caps text-xs uppercase font-bold">
                   KHÍ HẬU &amp; TRANG PHỤC KHUYÊN DÙNG
                 </h3>
@@ -337,7 +330,7 @@ export default function TripPlanPage() {
             <div className="bg-white rounded-2xl border border-[#eae8e5] p-5 shadow-xs space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-[#0b3b3c]">
-                  <span className="material-symbols-outlined text-[20px] text-[#b45309]">receipt_long</span>
+                  <Icon name="receipt_long" className="size-5 text-[#b45309]" />
                   <h3 className="font-label-caps text-xs uppercase font-bold">
                     MINH BẠCH CHI PHÍ
                   </h3>
@@ -364,7 +357,7 @@ export default function TripPlanPage() {
             {/* Module 4: Cultural & Cash Advice */}
             <div className="bg-[#f5f3f0] rounded-2xl border border-[#eae8e5] p-5 space-y-2 text-xs text-[#404848]">
               <span className="font-label-caps text-xs text-[#b45309] font-bold uppercase flex items-center gap-1.5">
-                <span className="material-symbols-outlined text-[16px]">info</span>
+                <Icon name="info" className="size-4" />
                 <span>LƯU Ý THỰC ĐỊA BẢN LÀNG</span>
               </span>
               <p className="leading-relaxed">

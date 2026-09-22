@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Icon from '@/components/ui/Icon';
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<'inspiration' | 'agents' | 'output'>('inspiration');
@@ -39,20 +40,20 @@ export default function HomePage() {
               className="inline-flex items-center justify-center gap-2 bg-[#0b3b3c] text-white font-label-lg text-sm px-7 py-3.5 rounded-lg shadow-sm hover:bg-[#124e50] transition-all font-semibold active:scale-[0.99]"
             >
               <span>Bắt đầu lập kế hoạch</span>
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              <Icon name="arrow_forward" className="size-[18px]" />
             </Link>
             <a
               href="#how-it-works"
               className="inline-flex items-center justify-center gap-2 bg-white text-[#0b3b3c] border border-[#eae8e5] font-label-lg text-sm px-6 py-3.5 rounded-lg hover:bg-[#f5f3f0] transition-colors shadow-xs font-semibold"
             >
-              <span className="material-symbols-outlined text-[18px] text-[#b45309]">explore</span>
+              <Icon name="explore" className="size-[18px] text-[#b45309]" />
               <span>Xem cách hoạt động</span>
             </a>
           </div>
 
           {/* Trust statement */}
           <div className="inline-flex items-center gap-2 text-xs font-label-caps uppercase tracking-wider text-[#404848]/80 mb-12">
-            <span className="material-symbols-outlined text-sm text-[#d97706]">verified_user</span>
+            <Icon name="verified_user" className="size-4 text-[#d97706]" />
             <span>AI gợi ý · Bạn toàn quyền quyết định</span>
           </div>
 
@@ -142,19 +143,19 @@ export default function HomePage() {
                     </span>
                     <ul className="space-y-2 text-xs font-body-sm text-[#404848]">
                       <li className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#0b3b3c]">location_on</span>
+                        <Icon name="location_on" className="size-4 text-[#0b3b3c]" />
                         <span>Khởi hành: <strong>Hà Nội</strong></span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#0b3b3c]">calendar_month</span>
+                        <Icon name="calendar_month" className="size-4 text-[#0b3b3c]" />
                         <span>Thời gian: <strong>4 ngày / 3 đêm (18–21 Th11)</strong></span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#0b3b3c]">payments</span>
+                        <Icon name="payments" className="size-4 text-[#0b3b3c]" />
                         <span>Ngân sách: <strong>Dưới 15.000.000 VND / 2 người</strong></span>
                       </li>
                       <li className="flex items-center gap-2">
-                        <span className="material-symbols-outlined text-sm text-[#0b3b3c]">directions_walk</span>
+                        <Icon name="directions_walk" className="size-4 text-[#0b3b3c]" />
                         <span>Nhịp độ: <strong>Thư thái (Tối đa 5km/ngày)</strong></span>
                       </li>
                     </ul>
@@ -165,7 +166,7 @@ export default function HomePage() {
                     className="mt-4 w-full py-2 bg-[#0b3b3c] text-white text-xs font-label-lg rounded-lg hover:bg-[#124e50] transition-colors flex items-center justify-center gap-1.5"
                   >
                     <span>Xem AI Agent phân tích</span>
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    <Icon name="arrow_forward" className="size-4" />
                   </button>
                 </div>
               </div>
@@ -176,7 +177,7 @@ export default function HomePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-in fade-in duration-300">
                 <div className="p-4 rounded-xl bg-[#f5f3f0] border border-[#eae8e5] space-y-2">
                   <div className="flex items-center gap-2 text-[#0b3b3c]">
-                    <span className="material-symbols-outlined text-[20px] text-[#3b6566]">fingerprint</span>
+                    <Icon name="fingerprint" className="size-5 text-[#3b6566]" />
                     <h3 className="font-label-lg text-sm font-semibold">Visual Agent</h3>
                   </div>
                   <p className="text-xs text-[#404848]">
@@ -189,7 +190,7 @@ export default function HomePage() {
 
                 <div className="p-4 rounded-xl bg-[#f5f3f0] border border-[#eae8e5] space-y-2">
                   <div className="flex items-center gap-2 text-[#0b3b3c]">
-                    <span className="material-symbols-outlined text-[20px] text-[#3b6566]">search</span>
+                    <Icon name="search" className="size-5 text-[#3b6566]" />
                     <h3 className="font-label-lg text-sm font-semibold">Search Agent</h3>
                   </div>
                   <p className="text-xs text-[#404848]">
@@ -202,7 +203,7 @@ export default function HomePage() {
 
                 <div className="p-4 rounded-xl bg-[#f5f3f0] border border-[#eae8e5] space-y-2">
                   <div className="flex items-center gap-2 text-[#0b3b3c]">
-                    <span className="material-symbols-outlined text-[20px] text-[#b45309]">verified</span>
+                    <Icon name="verified" className="size-5 text-[#b45309]" />
                     <h3 className="font-label-lg text-sm font-semibold">Reality Agent</h3>
                   </div>
                   <p className="text-xs text-[#404848]">
@@ -215,7 +216,7 @@ export default function HomePage() {
 
                 <div className="p-4 rounded-xl bg-[#f5f3f0] border border-[#eae8e5] space-y-2">
                   <div className="flex items-center gap-2 text-[#0b3b3c]">
-                    <span className="material-symbols-outlined text-[20px] text-[#3b6566]">alt_route</span>
+                    <Icon name="alt_route" className="size-5 text-[#3b6566]" />
                     <h3 className="font-label-lg text-sm font-semibold">Planning Agent</h3>
                   </div>
                   <p className="text-xs text-[#404848]">
@@ -250,14 +251,14 @@ export default function HomePage() {
                       href="/planner"
                       className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-[#0b3b3c] text-white text-xs font-label-lg rounded-lg hover:bg-[#124e50] transition-colors"
                     >
-                      <span className="material-symbols-outlined text-[16px]">map</span>
+                      <Icon name="map" className="size-4" />
                       <span>Mở Không gian lập kế hoạch</span>
                     </Link>
                     <Link
                       href="/trip-plan"
                       className="inline-flex items-center gap-1.5 px-5 py-2.5 bg-white border border-[#eae8e5] text-[#0b3b3c] text-xs font-label-lg rounded-lg hover:bg-[#f5f3f0] transition-colors"
                     >
-                      <span className="material-symbols-outlined text-[16px]">description</span>
+                      <Icon name="description" className="size-4" />
                       <span>Xem kế hoạch hoàn chỉnh</span>
                     </Link>
                   </div>
@@ -314,7 +315,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-xl border border-[#eae8e5] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[#beebeb]/50 text-[#0b3b3c] flex items-center justify-center mb-5">
-                  <span className="material-symbols-outlined text-[26px]">photo_library</span>
+                  <Icon name="photo_library" className="size-[26px]" />
                 </div>
                 <h3 className="font-headline-sm text-base text-[#0b3b3c] font-semibold mb-2">
                   Thấu hiểu cảm hứng (Visual DNA)
@@ -326,7 +327,7 @@ export default function HomePage() {
               <div className="pt-4 mt-4 border-t border-[#f5f3f0] flex items-center text-xs font-label-md text-[#0b3b3c] font-medium">
                 <Link href="/create-trip" className="hover:text-[#b45309] flex items-center gap-1">
                   <span>Trải nghiệm Travel DNA</span>
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="size-[14px]" />
                 </Link>
               </div>
             </div>
@@ -335,7 +336,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-xl border border-[#eae8e5] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[#beebeb]/50 text-[#0b3b3c] flex items-center justify-center mb-5">
-                  <span className="material-symbols-outlined text-[26px]">balance</span>
+                  <Icon name="balance" className="size-[26px]" />
                 </div>
                 <h3 className="font-headline-sm text-base text-[#0b3b3c] font-semibold mb-2">
                   Chọn điểm đến có cơ sở (Trade-offs)
@@ -347,7 +348,7 @@ export default function HomePage() {
               <div className="pt-4 mt-4 border-t border-[#f5f3f0] flex items-center text-xs font-label-md text-[#0b3b3c] font-medium">
                 <Link href="/destinations" className="hover:text-[#b45309] flex items-center gap-1">
                   <span>Khám phá điểm đến</span>
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="size-[14px]" />
                 </Link>
               </div>
             </div>
@@ -356,7 +357,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-xl border border-[#eae8e5] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[#beebeb]/50 text-[#0b3b3c] flex items-center justify-center mb-5">
-                  <span className="material-symbols-outlined text-[26px]">timeline</span>
+                  <Icon name="timeline" className="size-[26px]" />
                 </div>
                 <h3 className="font-headline-sm text-base text-[#0b3b3c] font-semibold mb-2">
                   Lịch trình thực tế (Route-aware)
@@ -368,7 +369,7 @@ export default function HomePage() {
               <div className="pt-4 mt-4 border-t border-[#f5f3f0] flex items-center text-xs font-label-md text-[#0b3b3c] font-medium">
                 <Link href="/planner" className="hover:text-[#b45309] flex items-center gap-1">
                   <span>Mở Planner Workspace</span>
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="size-[14px]" />
                 </Link>
               </div>
             </div>
@@ -377,7 +378,7 @@ export default function HomePage() {
             <div className="bg-white p-6 rounded-xl border border-[#eae8e5] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 rounded-lg bg-[#beebeb]/50 text-[#0b3b3c] flex items-center justify-center mb-5">
-                  <span className="material-symbols-outlined text-[26px]">handshake</span>
+                  <Icon name="handshake" className="size-[26px]" />
                 </div>
                 <h3 className="font-headline-sm text-base text-[#0b3b3c] font-semibold mb-2">
                   Cùng kiến tạo với AI (Human-in-the-loop)
@@ -389,7 +390,7 @@ export default function HomePage() {
               <div className="pt-4 mt-4 border-t border-[#f5f3f0] flex items-center text-xs font-label-md text-[#0b3b3c] font-medium">
                 <Link href="/trip-plan" className="hover:text-[#b45309] flex items-center gap-1">
                   <span>Xem tài liệu mẫu</span>
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  <Icon name="arrow_forward" className="size-[14px]" />
                 </Link>
               </div>
             </div>
@@ -492,7 +493,7 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 bg-[#d49b53] hover:bg-[#c88d42] text-white font-label-lg text-sm px-7 py-3.5 rounded-lg shadow-sm font-semibold transition-all active:scale-[0.99]"
               >
                 <span>Bắt đầu tạo chuyến đi</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <Icon name="arrow_forward" className="size-[18px]" />
               </Link>
               <Link
                 href="/destinations"
