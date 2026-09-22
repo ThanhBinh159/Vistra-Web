@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { MOCK_TRAVEL_DNA } from '@/data/mockData';
 import Toast from '@/components/shared/Toast';
+import Icon from '@/components/ui/Icon';
 
 interface MoodPhoto {
   id: string;
@@ -119,7 +120,7 @@ export default function CreateTripPage() {
                       className="absolute top-2 right-2 p-1.5 rounded-full bg-black/60 hover:bg-black text-white text-xs transition-colors"
                       title="Gỡ ảnh này"
                     >
-                      <span className="material-symbols-outlined text-[16px]">close</span>
+                      <Icon name="close" className="size-4" />
                     </button>
                   </div>
                   <div className="space-y-1.5">
@@ -147,7 +148,7 @@ export default function CreateTripPage() {
                 className="rounded-xl border-2 border-dashed border-[#c0c8c8] hover:border-[#0b3b3c] bg-[#f5f3f0]/50 hover:bg-[#f5f3f0] transition-all p-6 flex flex-col items-center justify-center text-center min-h-[220px] group cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0b3b3c] shadow-xs group-hover:scale-110 transition-transform mb-3">
-                  <span className="material-symbols-outlined text-[20px]">add_photo_alternate</span>
+                  <Icon name="add_photo_alternate" className="size-5" />
                 </div>
                 <span className="font-label-lg text-sm text-[#0b3b3c] font-semibold">
                   + Thêm ảnh khác
@@ -171,7 +172,7 @@ export default function CreateTripPage() {
                 </h2>
               </div>
               <span className="text-xs text-[#b45309] font-medium flex items-center gap-1">
-                <span className="material-symbols-outlined text-[15px]">mic</span>
+                <Icon name="mic" className="size-[15px]" />
                 <span>Hỗ trợ nhập bằng giọng nói</span>
               </span>
             </div>
@@ -186,7 +187,7 @@ export default function CreateTripPage() {
               />
               <div className="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-[#f5f3f0]">
                 <div className="flex items-center gap-2 text-[#404848] text-xs font-label-md">
-                  <span className="material-symbols-outlined text-[16px] text-[#b45309]">insights</span>
+                  <Icon name="insights" className="size-4 text-[#b45309]" />
                   <span>Đã tổng hợp 5 sở thích: Phi thương mại, Sắc thu, Cung đường đẹp, Ẩm thực bản địa</span>
                 </div>
                 <div className="text-[#404848]/70 font-label-caps text-xs">
@@ -216,7 +217,7 @@ export default function CreateTripPage() {
                     XUẤT PHÁT TỪ
                   </label>
                   <div className="flex items-center gap-2 bg-[#f5f3f0] px-3.5 py-2.5 rounded-lg border border-[#eae8e5]">
-                    <span className="material-symbols-outlined text-[#0b3b3c] text-[18px]">location_on</span>
+                    <Icon name="location_on" className="size-[18px] text-[#0b3b3c]" />
                     <input
                       type="text"
                       value={startCity}
@@ -232,7 +233,7 @@ export default function CreateTripPage() {
                     KHOẢNG THỜI GIAN / NGÀY ĐI
                   </label>
                   <div className="flex items-center gap-2 bg-[#f5f3f0] px-3.5 py-2.5 rounded-lg border border-[#eae8e5]">
-                    <span className="material-symbols-outlined text-[#0b3b3c] text-[18px]">calendar_today</span>
+                    <Icon name="calendar_today" className="size-[18px] text-[#0b3b3c]" />
                     <input
                       type="text"
                       value={dates}
@@ -248,7 +249,7 @@ export default function CreateTripPage() {
                     THỜI LƯỢNG
                   </label>
                   <div className="flex items-center gap-2 bg-[#f5f3f0] px-3.5 py-2.5 rounded-lg border border-[#eae8e5]">
-                    <span className="material-symbols-outlined text-[#0b3b3c] text-[18px]">schedule</span>
+                    <Icon name="schedule" className="size-[18px] text-[#0b3b3c]" />
                     <input
                       type="text"
                       value={duration}
@@ -264,7 +265,7 @@ export default function CreateTripPage() {
                     SỐ NGƯỜI ĐI
                   </label>
                   <div className="flex items-center gap-2 bg-[#f5f3f0] px-3.5 py-2.5 rounded-lg border border-[#eae8e5]">
-                    <span className="material-symbols-outlined text-[#0b3b3c] text-[18px]">group</span>
+                    <Icon name="group" className="size-[18px] text-[#0b3b3c]" />
                     <input
                       type="text"
                       value={travelers}
@@ -280,7 +281,7 @@ export default function CreateTripPage() {
                     NGÂN SÁCH DỰ KIẾN (TỔNG CỘNG)
                   </label>
                   <div className="flex items-center gap-2 bg-[#f5f3f0] px-3.5 py-2.5 rounded-lg border border-[#eae8e5]">
-                    <span className="material-symbols-outlined text-[#b45309] text-[18px]">payments</span>
+                    <Icon name="payments" className="size-[18px] text-[#b45309]" />
                     <input
                       type="text"
                       value={budget}
@@ -324,7 +325,7 @@ export default function CreateTripPage() {
                     <span className="text-xs font-label-md text-[#404848]">Mục tiêu đi bộ hàng ngày</span>
                     <div className="bg-[#f5f3f0] px-3 py-2 rounded-lg text-[#0b3b3c] text-xs font-body-sm flex items-center justify-between border border-[#eae8e5]">
                       <span>Vừa phải · tối đa 5km/ngày</span>
-                      <span className="material-symbols-outlined text-[16px] text-[#404848]">nordic_walking</span>
+                      <Icon name="nordic_walking" className="size-4 text-[#404848]" />
                     </div>
                   </div>
 
@@ -333,7 +334,7 @@ export default function CreateTripPage() {
                     <span className="text-xs font-label-md text-[#404848]">Địa hình &amp; Tiếp cận</span>
                     <div className="bg-[#f5f3f0] px-3 py-2 rounded-lg text-[#0b3b3c] text-xs font-body-sm flex items-center justify-between border border-[#eae8e5]">
                       <span>Địa hình tiêu chuẩn</span>
-                      <span className="material-symbols-outlined text-[16px] text-[#2e7d32]">check_circle</span>
+                      <Icon name="check_circle" className="size-4 text-[#2e7d32]" />
                     </div>
                   </div>
                 </div>
@@ -349,7 +350,7 @@ export default function CreateTripPage() {
             <div className="flex items-start justify-between">
               <div>
                 <div className="flex items-center gap-1.5 text-[#b45309] font-label-caps text-xs uppercase font-semibold mb-1">
-                  <span className="material-symbols-outlined text-[16px]">fingerprint</span>
+                  <Icon name="fingerprint" className="size-4" />
                   <span>Vistra Intelligence Engine</span>
                 </div>
                 <h3 className="font-headline-sm text-lg text-[#0b3b3c] font-bold">
@@ -371,7 +372,7 @@ export default function CreateTripPage() {
                 <div key={metric.label} className="flex flex-col gap-1">
                   <div className="flex items-center justify-between text-xs font-label-md text-[#1e293b]">
                     <span className="flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[15px] text-[#3b6566]">{metric.icon}</span>
+                      <Icon name={metric.icon} className="size-[15px] text-[#3b6566]" />
                       <span>{metric.label}</span>
                     </span>
                     <span className="font-semibold text-[#0b3b3c]">
@@ -408,7 +409,7 @@ export default function CreateTripPage() {
                 className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-lg bg-[#0b3b3c] hover:bg-[#124e50] text-white font-label-lg text-sm font-semibold transition-all shadow-sm active:scale-[0.99]"
               >
                 <span>Khám phá điểm đến phù hợp</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <Icon name="arrow_forward" className="size-[18px]" />
               </Link>
               <span className="text-center text-[11px] text-[#717978]">
                 AI đã chuẩn bị 3 phương án đối chiếu kèm Reality Check

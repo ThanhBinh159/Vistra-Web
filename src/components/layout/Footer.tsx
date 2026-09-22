@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Icon from '@/components/ui/Icon';
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-2.5">
               <div className="w-8 h-8 rounded-lg bg-[#0b3b3c] flex items-center justify-center text-white">
-                <span className="material-symbols-outlined text-[20px]">explore</span>
+                <Icon name="explore" className="size-5" />
               </div>
               <span className="font-headline-sm text-xl tracking-tight text-[#0b3b3c] font-bold">VISTRA</span>
             </Link>

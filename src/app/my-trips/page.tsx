@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { MOCK_TRIPS } from '@/data/mockData';
+import Icon from '@/components/ui/Icon';
 
 export default function MyTripsPage() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'planning' | 'upcoming' | 'past'>('all');
@@ -57,7 +58,7 @@ export default function MyTripsPage() {
             href="/create-trip"
             className="inline-flex items-center gap-2 bg-[#0b3b3c] text-white font-label-lg text-sm px-5 py-2.5 rounded-lg hover:bg-[#124e50] transition-all active:scale-[0.99] shadow-sm font-semibold"
           >
-            <span className="material-symbols-outlined text-[18px]">add</span>
+            <Icon name="add" className="size-[18px]" />
             <span>+ Lên kế hoạch mới</span>
           </Link>
         </div>
@@ -112,9 +113,7 @@ export default function MyTripsPage() {
         {/* Live Search */}
         <div className="flex items-center gap-2 w-full sm:w-auto">
           <div className="relative w-full sm:w-72">
-            <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#404848]/60 text-[18px]">
-              search
-            </span>
+            <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 size-[18px] text-[#404848]/60" />
             <input
               type="text"
               value={searchQuery}
@@ -128,7 +127,7 @@ export default function MyTripsPage() {
             className="p-2 text-[#404848] hover:text-[#0b3b3c] rounded-lg bg-white border border-[#eae8e5] hover:bg-[#eae8e5] transition-colors"
             title="Thứ tự sắp xếp"
           >
-            <span className="material-symbols-outlined text-[20px]">swap_vert</span>
+            <Icon name="swap_vert" className="size-5" />
           </button>
         </div>
       </div>
@@ -181,7 +180,7 @@ export default function MyTripsPage() {
                       {trip.title}
                     </h3>
                     <p className="text-xs text-[#404848] font-body-sm flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[16px] text-[#3b6566]">location_on</span>
+                      <Icon name="location_on" className="size-4 text-[#3b6566]" />
                       <span>{trip.destination} · {trip.travelers}</span>
                     </p>
                   </div>
@@ -202,7 +201,7 @@ export default function MyTripsPage() {
                       </div>
                       {trip.note && (
                         <p className="text-[11px] text-[#b45309] font-medium italic pt-1 flex items-center gap-1">
-                          <span className="material-symbols-outlined text-[13px]">info</span>
+                          <Icon name="info" className="size-[13px]" />
                           <span>{trip.note}</span>
                         </p>
                       )}
@@ -214,7 +213,7 @@ export default function MyTripsPage() {
                       href="/planner"
                       className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 bg-[#0b3b3c] text-white text-xs font-label-lg rounded-lg hover:bg-[#124e50] transition-colors font-medium shadow-xs"
                     >
-                      <span className="material-symbols-outlined text-[16px]">edit_calendar</span>
+                      <Icon name="edit_calendar" className="size-4" />
                       <span>Tiếp tục lên kế hoạch</span>
                     </Link>
                     <Link
@@ -222,7 +221,7 @@ export default function MyTripsPage() {
                       className="inline-flex items-center justify-center py-2.5 px-3 bg-[#f5f3f0] text-[#0b3b3c] hover:bg-[#eae8e5] text-xs font-label-lg rounded-lg transition-colors border border-[#eae8e5]"
                       title="Xem trước tài liệu"
                     >
-                      <span className="material-symbols-outlined text-[18px]">visibility</span>
+                      <Icon name="visibility" className="size-[18px]" />
                     </Link>
                   </div>
                 </div>
@@ -277,12 +276,12 @@ export default function MyTripsPage() {
                       {trip.title}
                     </h3>
                     <p className="text-xs text-[#404848] font-body-sm flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[16px] text-[#3b6566]">calendar_today</span>
+                      <Icon name="calendar_today" className="size-4 text-[#3b6566]" />
                       <span>{trip.dates} · {trip.travelers}</span>
                     </p>
                     {trip.note && (
                       <p className="text-xs text-[#2e7d32] font-medium mt-2 flex items-center gap-1">
-                        <span className="material-symbols-outlined text-[15px]">check_circle</span>
+                        <Icon name="check_circle" className="size-[15px]" />
                         <span>{trip.note}</span>
                       </p>
                     )}
@@ -293,7 +292,7 @@ export default function MyTripsPage() {
                       href="/trip-plan"
                       className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 bg-[#0b3b3c] text-white text-xs font-label-lg rounded-lg hover:bg-[#124e50] transition-colors font-medium shadow-xs"
                     >
-                      <span className="material-symbols-outlined text-[16px]">description</span>
+                      <Icon name="description" className="size-4" />
                       <span>Mở tài liệu hành trình đầy đủ</span>
                     </Link>
                   </div>
@@ -355,7 +354,7 @@ export default function MyTripsPage() {
                       href="/create-trip"
                       className="inline-flex items-center justify-center gap-1.5 py-2 px-4 bg-[#f5f3f0] hover:bg-[#eae8e5] text-[#0b3b3c] text-xs font-label-lg rounded-lg transition-colors border border-[#eae8e5]"
                     >
-                      <span className="material-symbols-outlined text-[16px]">replay</span>
+                      <Icon name="replay" className="size-4" />
                       <span>Lên kế hoạch tương tự</span>
                     </Link>
                   </div>
@@ -369,7 +368,7 @@ export default function MyTripsPage() {
       {/* Empty State */}
       {filteredTrips.length === 0 && (
         <div className="text-center py-16 bg-white rounded-xl border border-[#eae8e5] p-8">
-          <span className="material-symbols-outlined text-4xl text-[#717978] mb-3">travel_explore</span>
+          <Icon name="travel_explore" className="size-9 text-[#717978] mb-3" />
           <h3 className="font-headline-sm text-lg text-[#0b3b3c] font-semibold mb-1">
             Không tìm thấy chuyến đi nào
           </h3>

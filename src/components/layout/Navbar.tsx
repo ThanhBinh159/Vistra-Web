@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Icon from '@/components/ui/Icon';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -28,7 +29,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6 lg:gap-10">
           <Link href="/" className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 rounded-lg bg-[#0b3b3c] flex items-center justify-center text-white shadow-sm group-hover:bg-[#124e50] transition-colors">
-              <span className="material-symbols-outlined text-[22px]">explore</span>
+              <Icon name="explore" className="size-[22px]" />
             </div>
             <div className="flex flex-col">
               <span className="font-headline-sm text-xl tracking-tight text-[#0b3b3c] font-bold">VISTRA</span>
@@ -63,7 +64,7 @@ export default function Navbar() {
             href="/create-trip"
             className="inline-flex items-center justify-center gap-1.5 bg-[#0b3b3c] text-white font-label-lg text-sm px-4 sm:px-5 py-2.5 rounded-lg hover:bg-[#124e50] transition-all active:scale-[0.98] shadow-sm font-medium"
           >
-            <span className="material-symbols-outlined text-[18px]">add</span>
+            <Icon name="add" className="size-[18px]" />
             <span>+ Lên kế hoạch</span>
           </Link>
 
@@ -81,9 +82,7 @@ export default function Navbar() {
             className="lg:hidden p-2 rounded-lg text-[#404848] hover:text-[#0b3b3c] hover:bg-[#efeeeb] transition-colors"
             aria-label="Toggle navigation menu"
           >
-            <span className="material-symbols-outlined text-[24px]">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
+            <Icon name={mobileMenuOpen ? 'close' : 'menu'} className="size-6" />
           </button>
         </div>
       </div>
